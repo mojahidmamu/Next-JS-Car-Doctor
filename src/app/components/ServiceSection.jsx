@@ -193,15 +193,28 @@ export default async function ServiceSection() {
   ];
   return (
     <div className="grid grid-cols-12">
-      {data.map( (item) => {
+      {data.map((item) => {
         return (
-          <div className="col-span-1 md:col-span-6 lg:col-span-4" key={item._id}>
+          <div
+            className="col-span-1 md:col-span-6 lg:col-span-4 p-5 ml-5 mb-5"
+            key={item._id}
+          >
             {/* {JSON.stringify(item)} */}
-            <Image src={item.img} width={314} height={208} alt={item.title}></Image>
-            <h2>Title:{item.title} </h2>
+            <Image
+              className="rounded-md"
+              src={item.img}
+              width={314}
+              height={250}
+              alt={item.title}
+            ></Image>
+            <h2 className="text-3xl font-bold my-4">{item.title} </h2>
+            <p className="font-bold text-red-600 ">Price: $ {item.price} </p>
           </div>
-        )
+        );
       })}
+      {/* <div className="flex justify-center items-center mx-auto">
+        <button className="btn btn-outline ">More Services</button>
+      </div> */}
       
     </div>
     
