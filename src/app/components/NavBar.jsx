@@ -2,6 +2,18 @@ import Image from "next/image";
 import React from "react";
 
 export default function NavBar() {
+  const NavMenu = () => {
+    return (
+      <>
+        <li> <a href="#">Home</a> </li>
+        <li> <a href="#">About</a> </li>
+        <li> <a href="#">Services</a> </li>
+        <li> <a href="#">Blog</a> </li>
+        <li> <a href="#">Contact </a> </li> 
+      </>
+    );
+  };
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -26,38 +38,26 @@ export default function NavBar() {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-                 
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+            > 
+              {NavMenu()}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">
-            <Image src={'/assets/logo.svg'} width={60} height={60} ></Image>
+            <Image
+              src={"/assets/logo.svg"}
+              width={107}
+              height={87}
+              alt="Website Logo"
+            />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {NavMenu()}
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn">Appointment</a>
         </div>
       </div>
     </div>
