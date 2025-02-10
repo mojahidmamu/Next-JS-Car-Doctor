@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function NavBar() {
   const NavMenu = () => {
     return (
       <>
-        <li> <a href="#">Home</a> </li>
-        <li> <a href="#">About</a> </li>
-        <li> <a href="#">Services</a> </li>
-        <li> <a href="#">Blog</a> </li>
-        <li> <a href="#">Contact </a> </li> 
+        <li> <Link href={'/'}> Home</Link> </li>
+        <li> <Link href={'/about'}> About</Link> </li>
+        <li> <Link href={'/services'}> Services</Link> </li>
+        <li> <Link href={'/blogs'}> Blogs</Link> </li>
+        <li> <Link href={'/contacts'}> Contacts </Link> </li> 
       </>
     );
   };
@@ -45,8 +46,8 @@ export default function NavBar() {
           <a className="btn btn-ghost text-xl">
             <Image
               src={"/assets/logo.svg"}
-              width={107}
-              height={87}
+              width={80}
+              height={60}
               alt="Website Logo"
             />
           </a>
@@ -57,7 +58,7 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Appointment</a>
+          <a className="btn btn-outline">Appointment</a>
         </div>
       </div>
     </div>
