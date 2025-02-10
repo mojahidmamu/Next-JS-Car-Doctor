@@ -197,12 +197,12 @@ export default async function ServiceSection() {
         return (
           <div className="col-span-1 md:col-span-6 lg:col-span-4" key={item._id}>
             {/* {JSON.stringify(item)} */}
-            <Image src={item.img} width={314} height={208}></Image>
-
+            <Image src={item.img} width={314} height={208} alt={item.title}></Image>
+            <h2>Title:{item.title} </h2>
           </div>
         )
       })}
-      <h2>this is services </h2>
+      
     </div>
     
   );
