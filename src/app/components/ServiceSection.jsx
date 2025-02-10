@@ -1,5 +1,7 @@
-import Image from "next/image";
+import Image from "next/image"; 
+import Link from "next/link";
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 export default async function ServiceSection() {
   // const res = await fetch("/services.json");
@@ -207,16 +209,24 @@ export default async function ServiceSection() {
               height={250}
               alt={item.title}
             ></Image>
-            <h2 className="text-3xl font-bold my-4">{item.title} </h2>
-            <p className="font-bold text-red-600 ">Price: $ {item.price} </p>
+            <div className="flex">
+              <div>
+                <h2 className="text-3xl font-bold my-4">{item.title} </h2>
+                <p className="font-bold text-red-600 ">
+                  Price: $ {item.price}{" "}
+                </p>
+              </div>
+              <div className="items-center text-center mt-10 ml-7">
+                <p>
+                  <Link href={`//${item._id}`} className="text-green-500">
+                   Full View <FaArrowRight />
+                  </Link>
+                </p>
+              </div>
+            </div>
           </div>
         );
       })}
-      {/* <div className="flex justify-center items-center mx-auto">
-        <button className="btn btn-outline ">More Services</button>
-      </div> */}
-      
     </div>
-    
   );
 }
