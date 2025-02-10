@@ -218,8 +218,8 @@ export default async function ServiceSection() {
               </div>
               <div className="items-center text-center mt-10 ml-7">
                 <p>
-                  <Link href={`//${item._id}`} className="text-green-500">
-                   Full View <FaArrowRight />
+                  <Link href={`/services/${item._id}`} className="text-green-500">
+                   View Full <FaArrowRight />
                   </Link>
                 </p>
               </div>
