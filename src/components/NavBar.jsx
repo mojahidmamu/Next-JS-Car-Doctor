@@ -58,6 +58,8 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="navbar-end">
+          <Link href='/login'> <li className="btn m-3">Login</li></Link> 
+          <Link href='/register'> <li className="btn m-3">Register</li></Link>
           <a className="btn btn-outline">Appointment</a>
         </div>
       </div>
