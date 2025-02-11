@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import { pages } from "next/dist/build/templates/app-page";
+import CredentialsProvider from "next-auth/providers/credentials"; 
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -16,7 +15,8 @@ export const authOptions = {
         email: { label: "Email", type: "email", placeholder: "Enter Mail" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials, req) {
+      async authorize(credentials, req) {  
+        console.log(credentials, req)
         // Add logic here to look up the user from the credentials supplied
         const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
   
