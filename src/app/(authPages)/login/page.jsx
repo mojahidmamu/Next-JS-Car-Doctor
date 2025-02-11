@@ -1,7 +1,22 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
 export default function LiginPage() {
+
+  const handleLoginSubmit = (event) => {
+  event.preventDefault();
+
+  const form = event.currentTarget; // Ensures we are accessing the form
+  console.log(form); // Debugging: Check if form is accessible
+
+  const name = form.name?.value;
+  const email = form.email?.value;
+  const password = form.password?.value;
+
+  console.log({ name, email, password });
+};
+
   return (
     <section>
       <div className="hero bg-base-200 min-h-screen">
@@ -15,7 +30,7 @@ export default function LiginPage() {
             ></Image>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body">
+            <form onSubmit={handleLoginSubmit} className="card-body">
               <h1 className="font-bold text-3xl text-center">Login</h1>
 
               <div className="form-control">
@@ -25,6 +40,7 @@ export default function LiginPage() {
                 <input
                   type="email"
                   placeholder="email"
+                  name="email"
                   className="input input-bordered"
                   required
                 />
@@ -36,6 +52,7 @@ export default function LiginPage() {
                 <input
                   type="password"
                   placeholder="password"
+                  name="password"
                   className="input input-bordered"
                   required
                 />
